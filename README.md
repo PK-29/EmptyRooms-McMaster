@@ -1,23 +1,49 @@
-
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Welcome to your Node.js project on Cloud9 IDE!
-
-This chat example showcases how to use `socket.io` with a static `express` server.
-
-## Running the server
-
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
-
-2) Alternatively you can launch the app from the Terminal:
-
-    $ node server.js
-
-Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
-# EmptyRooms-McMaster
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <div style="float:left;width: 45%; padding-right:70px; ">
+            <input name="time" type="text" class="ghost-input" placeholder="Enter a Time (ex: 11:00PM)" required>
+          </div>
+          <div style="float:left; width: 30%;">
+          <input name="rcode" type="text" class="ghost-input" placeholder="Enter Room Code" required>
+          </div>
+          <input type="submit" class="ghost-button" value="List EmptyRooms">
+        </form>
+        <ul style="width:25%;">
+          <% for(var i=0; i < roomse.length; i++){ %>
+            
+            <li><%= roomse[i] %></li>
+            
+          <% } %>
+        </ul>
+       
+        <ul style="width:25%;">
+          <% for(var i=0; i < roomse.length; i++){ %>
+            
+            <li><%= lt[i] %></li>
+            
+          <% } %>
+        </ul>
+        <ul style="width:25%;">
+          <% for(var i=0; i < roomse.length; i++){ %>
+            
+            <li><%= c[i] %></li>
+            
+          <% } %>
+        </ul>
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+    </div>
+  </body>
+</html>
