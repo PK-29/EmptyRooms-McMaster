@@ -6,7 +6,7 @@ var moment = require('moment');
 
 const app = express()
 
-
+var port = process.env.PORT || 8080;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -152,6 +152,6 @@ app.post('/', function (req, res) {
 })
 
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(port, function () {
+  console.log('Example app listening on port 8080!')
 })
