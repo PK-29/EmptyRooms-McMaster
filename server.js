@@ -13,17 +13,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index', {weather: null, error: null});
+  res.render('index', {roomse: [], error: null});
 })
 
 app.post('/', function (req, res) {
   let time = req.body.time;
   let ccode = (req.body.rcode).toUpperCase();
+  var day = req.body.day;
+  var term = req.body.term;
+  if(term == 2){
+    term = 5;
+    
+  }else{
+    term=term*2
+  }
   let url = 'https://www.timetablegenerator.io/api/v2/school/mcmaster'
 
   request(url, function (err, response, body) {
     if(err){
-      res.render('index', {weather: null, error: 'Error, please try again'});
+      res.render('index', {roomse: null, error: 'Error, please try again'});
     } else {
       let rooms = JSON.parse(body)
       var dt = moment(time, ["h:mmA"]).format("HH:mm");
@@ -51,7 +59,7 @@ app.post('/', function (req, res) {
                 for (var l in rp){
                   
                   try{
-                    if (rp[l]["day"]==2 && rp[l]["term"]==2 ){
+                    if (rp[l]["day"]==day && rp[l]["term"]==term ){
                       
                       var start = rp[l]["start"]
                       
@@ -131,6 +139,7 @@ app.post('/', function (req, res) {
       if(rooms.section_types == undefined){
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {
+        console.log("RENDERING")
         let roomlist = Array.from(r);
         let lectime = Array.from(n);
         let lect = Array.from(p)
