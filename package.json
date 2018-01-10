@@ -10,6 +10,7 @@
     "ejs": "~2.5.7",
     "express": "^3.2.6",
     "request": "^2.83.0",
+    "moment": "^2.14.1",
     "socket.io": "~0.9.14"
   },
   "scripts": {
