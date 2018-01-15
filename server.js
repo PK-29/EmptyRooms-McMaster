@@ -94,9 +94,7 @@ app.post('/', function (req, res) {
                               Class : classcode
                             }]
                           }
-                          // r.push(checkroom )
-                          // n.push(nextclass)   
-                          // p.push(classcode)
+                         
                         }
                         
                       }
@@ -113,21 +111,26 @@ app.post('/', function (req, res) {
               }
               }
             
-      
           }
       }
       
       var dk = Object.keys(dictionary)
       
+      
       for (var i in dk){
        var dv = dictionary[dk[i]]
+       r.push(dk[i])
+       
+       let alltime = []
+       let allclass = []
         for (var k in dv ){
           
-          r.push(dk[i])
-          n.push(dv[k]["Time"])
-          p.push(dv[k]["Class"])
-          
+          alltime.push(dv[k]["Time"])
+          allclass.push(dv[k]["Class"])
+        
         }
+        n.push(alltime)
+        p.push(allclass)
       }
       
     
@@ -135,7 +138,7 @@ app.post('/', function (req, res) {
         
       
     
-      //console.log(r)
+      console.log(n)
       if(rooms.section_types == undefined){
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {

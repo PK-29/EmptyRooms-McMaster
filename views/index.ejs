@@ -36,31 +36,40 @@
           </div>
           <input type="submit" class="ghost-button" value="List EmptyRooms">
         </form>
-        <div class="infotab" Style="width:22%"><p>Room</p> </div>
+        <div class="infotab" Style="width:23%"><p>Room</p> </div>
         <div class="infotab" Style="width:33%"><p>Occupation</p> </div>
-        <div class="infotab" Style="width:22%"><p>Lecture</p> </div>
+        <div class="infotab" Style="width:23%"><p>Lecture</p> </div>
           <ul style="width:23%;">
             <% if(roomse !== null){%>
             <% for(var i=0; i < roomse.length; i++){ %>
+              <li style="padding:15px 18px 15px 0px"><%= roomse[i] %></li>
               
-              <li><%= roomse[i] %></li>
               
             <% } %>
           </ul>
          
           <ul style="width:33%;">
             <% for(var i=0; i < roomse.length; i++){ %>
-              
-              <li><%= lt[i] %></li>
-              
-            <% } %>
+              <button class="accordion" style="width:77%"><%=lt[i][0]%></button> 
+              <div class="panel">
+               <% for(var j=0; j < lt[i].length;j++){ %>
+                  <li style="padding:5px 0px;"><%= lt[i][j] %></li>
+               <% } %>  
+              </div>
+              <% } %>
+            
           </ul>
-          <ul style="width:22%;">
+          <ul style="width:23%;">
             <% for(var i=0; i < roomse.length; i++){ %>
-              
-              <li><%= c[i] %></li>
+              <button class="accordion" style="width:100%"><%=c[i][0]%></button> 
+              <div class="panel" style="width:100%">
+                <% for(var j=0; j < c[i].length; j++){%>
+                  <li style="padding:5px 0px;"><%= c[i][j] %></li>
+                <% } %>
+              </div>
               
             <% } %>
+        
           </ul>
         <% } %>
         <% if(error !== null){ %>
@@ -70,3 +79,20 @@
     </div>
   </body>
 </html>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
