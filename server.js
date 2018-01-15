@@ -133,12 +133,6 @@ app.post('/', function (req, res) {
         p.push(allclass)
       }
       
-    
-        
-        
-      
-    
-      console.log(n)
       if(rooms.section_types == undefined){
         res.render('index', {weather: null, error: 'Error, please try again'});
       } else {

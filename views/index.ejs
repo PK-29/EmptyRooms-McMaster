@@ -19,18 +19,50 @@
 ">
           </div>
           <div style="width: 35%;">
-    <input name="rcode" type="text" class="ghost-input" placeholder="Enter Room Code" required="">
+          <input name="rcode" type="text" placeholder="Building Code" class="ghost-input" list="build"/>
+          <datalist id="build">
+            <option>ABB</option>
+            <option>BSB</option>
+            <option>CNH</option>
+            <option>DBAC</option>
+            <option>DSB</option>
+            <option>GH</option>
+            <option>HH</option>
+            <option>HSC</option>
+            <option>ITB</option>
+            <option>IAHS</option>
+            <option>IWC</option>
+            <option>JHE</option>
+            <option>KTH</option>
+            <option>LRW</option>
+            <option>MDCL</option>
+            <option>TSH</option>
+            <option>UH</option>
+          </datalist>
+    
         </div>
           
           </div>
           <div class="IN">
           <div style="width: 50%;margin-left: 10px;">
-            <input name="day" type="text" class="ghost-input" placeholder="Enter a Day (Mon = 1)" required="" style="
-    width: 100%;
-">
+            <input name="day" type="text" class="ghost-input" placeholder="Enter a Day" list="days" required="" style="
+    width: 100%;"/>
+            <datalist id="days">
+              <option value="1">Mon</option>
+              <option value="2">Tues</option>
+              <option value="3">Wed</option>
+              <option value="4">Thurs</option>
+              <option value="5">Fri</option>
+            
+            </datalist>
           </div>
           <div style="width: 35%;">
-    <input name="term" type="text" class="ghost-input" placeholder="Enter a Term" required="">
+    <input name="term" type="text" list="terms" class="ghost-input" placeholder="Enter a Term" required="">
+    <datalist id = "terms">
+      <option value="1">Fall</option>
+      <option value="2">Winter</option>
+      <option value="3">Summer</option>
+    </datalist>
         </div>
           
           </div>
@@ -53,6 +85,7 @@
               <button class="accordion" style="width:77%"><%=lt[i][0]%></button> 
               <div class="panel">
                <% for(var j=0; j < lt[i].length;j++){ %>
+               
                   <li style="padding:5px 0px;"><%= lt[i][j] %></li>
                <% } %>  
               </div>
