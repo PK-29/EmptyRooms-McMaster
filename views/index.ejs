@@ -74,7 +74,7 @@
           <ul style="width:23%;">
             <% if(roomse !== null){%>
             <% for(var i=0; i < roomse.length; i++){ %>
-              <li style="padding:15px 18px 15px 0px"><%= roomse[i] %></li>
+              <li style="padding:18px 18px 18px 0px; line-height: 20px"><%= roomse[i] %></li>
               
               
             <% } %>
@@ -94,7 +94,7 @@
           </ul>
           <ul style="width:23%;">
             <% for(var i=0; i < roomse.length; i++){ %>
-              <button class="accordion" style="width:100%"><%=c[i][0]%></button> 
+              <button class="accordion" style="width:110%"><%=c[i][0]%></button> 
               <div class="panel" style="width:100%">
                 <% for(var j=0; j < c[i].length; j++){%>
                   <li style="padding:5px 0px;"><%= c[i][j] %></li>
