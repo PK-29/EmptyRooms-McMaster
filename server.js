@@ -64,13 +64,13 @@ app.post('/', function (req, res) {
                       var start = rp[l]["start"]
                       
                       var end = rp[l]["end"]
-                      var checkroom = rp[l]["room"]+"-"+ctypei[j]
+                      var checkroom = rp[l]["room"]
                       
                      
                       if (!(start <= dt && dt <= end)&& (checkroom.indexOf(ccode) >= 0) && (/\d/.test(checkroom))){
                         if (dt <= start){
                           var nextclass = moment(start, ["HH:mm"]).format("h:mmA") + "  -  " + moment(end, ["HH:mm"]).format("h:mmA");
-                          var classcode = value[courses[i]]["code"]
+                          var classcode = value[courses[i]]["code"]+"-"+ctypei[j]
                         }else{
                           var nextclass = "Empty"
                           var classcode = "NONE"
@@ -98,7 +98,6 @@ app.post('/', function (req, res) {
                         }
                         
                       }
-                      //console.log(dictionary)
                     }
                       
                   }  
