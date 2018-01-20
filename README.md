@@ -9,4 +9,4 @@ Prototype1
 https://emptyroomsatmac.herokuapp.com/
 <br>
 
-![Alt text](demoo.JPG)
+![Alt text](demmo.JPG)
