@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index', {roomse: [], error: null});
+  res.render('index', {roomse: [],t : [], d : [], m : [], error: null});
 })
 
 app.post('/', function (req, res) {
