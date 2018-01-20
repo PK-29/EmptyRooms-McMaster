@@ -38,6 +38,7 @@
             <option>MDCL</option>
             <option>TSH</option>
             <option>UH</option>
+            <option>T13</option>
           </datalist>
     
         </div>
@@ -48,11 +49,11 @@
             <input name="day" type="text" class="ghost-input" placeholder="Enter a Day" list="days" required="" style="
     width: 100%;"/>
             <datalist id="days">
-              <option value="1">Mon</option>
-              <option value="2">Tues</option>
-              <option value="3">Wed</option>
-              <option value="4">Thurs</option>
-              <option value="5">Fri</option>
+              <option>Mon</option>
+              <option>Tues</option>
+              <option>Wed</option>
+              <option>Thurs</option>
+              <option>Fri</option>
             
             </datalist>
           </div>
@@ -68,13 +69,16 @@
           </div>
           <input type="submit" class="ghost-button" value="List EmptyRooms">
         </form>
+        <div class="infotab" Style="width:28%; padding-left:30px"><p Style="font-size: 20px; ">Time: <%=t%></p> </div>
+        <div class="infotab" Style="width:28%"><p Style="font-size: 20px;">Day: <%=d%></p> </div>
+        <div class="infotab" Style="width:23%; padding-left:50px"><p Style="font-size: 20px; ">Term: <%=m%></p> </div>
         <div class="infotab" Style="width:23%"><p>Room</p> </div>
         <div class="infotab" Style="width:33%"><p>Occupation</p> </div>
         <div class="infotab" Style="width:23%"><p>Lecture</p> </div>
           <ul style="width:23%;">
             <% if(roomse !== null){%>
             <% for(var i=0; i < roomse.length; i++){ %>
-              <li style="padding:18px 18px 18px 0px; line-height: 20px"><%= roomse[i] %></li>
+              <li style="padding:18px 18px 18px 0px; line-height: 20px"> <%= roomse[i] %></li>
               
               
             <% } %>

@@ -17,9 +17,11 @@ app.get('/', function (req, res) {
 })
 
 app.post('/', function (req, res) {
-  let time = req.body.time;
-  let ccode = (req.body.rcode).toUpperCase();
-  var day = req.body.day;
+  var days = ["Mon", "Tues", "Wed", "Thurs", "Fri"]
+  var time = req.body.time;
+  var ccode = (req.body.rcode).toUpperCase();
+  var day = days.indexOf(req.body.day)+1;
+  
   var term = req.body.term;
   if(term == 2){
     term = 5;
@@ -126,8 +128,7 @@ app.post('/', function (req, res) {
       for (var i in dk){
        var dv = dictionary[dk[i]]
        r.push(dk[i])
-       console.log(dv)
-       console.log(dk[i])
+       
        let alltime = []
        let allclass = []
         for (var k in dv ){
@@ -148,8 +149,10 @@ app.post('/', function (req, res) {
         console.log("RENDERING")
         let roomlist = Array.from(r);
         let lectime = Array.from(n);
-        let lect = Array.from(p)
-        res.render('index', {roomse: roomlist, lt: lectime, c: lect, error: null});
+        let lect = Array.from(p);
+       
+       
+        res.render('index', {roomse: roomlist, lt: lectime, c: lect, t: time, d: days[day-1], m: req.body.term, error: null});
       }
     }
   
