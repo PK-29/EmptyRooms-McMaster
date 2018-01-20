@@ -43,6 +43,7 @@ app.post('/', function (req, res) {
       var n = []
       var p = []
       var differ = new Set()
+      var bypass = new Set()
       var dictionary = {}
       for (i in courses){
         //console.log(value[courses[i]])
@@ -66,8 +67,8 @@ app.post('/', function (req, res) {
                       var end = rp[l]["end"]
                       var checkroom = rp[l]["room"]
                       
-                     
-                      if (!(start <= dt && dt <= end)&& (checkroom.indexOf(ccode) >= 0) && (/\d/.test(checkroom))){
+                      if (!(dt >= start && dt <= end)&& (checkroom.indexOf(ccode) >= 0) && (/\d/.test(checkroom)) && !bypass.has(checkroom)){
+                       // console.log(start+" "+end+" " + dt+ " "+ checkroom)
                         if (dt <= start){
                           var nextclass = moment(start, ["HH:mm"]).format("h:mmA") + "  -  " + moment(end, ["HH:mm"]).format("h:mmA");
                           var classcode = value[courses[i]]["code"]+"-"+ctypei[j]
@@ -75,7 +76,7 @@ app.post('/', function (req, res) {
                           var nextclass = "Empty"
                           var classcode = "NONE"
                         }
-                       
+                        
                         var anychange = differ.size
                         differ.add(checkroom+nextclass+classcode)
                         if (anychange != differ.size){
@@ -96,6 +97,12 @@ app.post('/', function (req, res) {
                           }
                          
                         }
+                        
+                      }else{
+                        if (dictionary.hasOwnProperty(checkroom)){
+                          delete dictionary[checkroom]
+                        }
+                        bypass.add(checkroom)
                         
                       }
                     }
@@ -119,14 +126,17 @@ app.post('/', function (req, res) {
       for (var i in dk){
        var dv = dictionary[dk[i]]
        r.push(dk[i])
-       
+       console.log(dv)
+       console.log(dk[i])
        let alltime = []
        let allclass = []
         for (var k in dv ){
           
-          alltime.push(dv[k]["Time"])
-          allclass.push(dv[k]["Class"])
-        
+          if ((dv.length == 1 && dv[k]["Time"] == "Empty")||(dv.length >= 1 && dv[k]["Time"]!=="Empty")){
+            
+            alltime.push(dv[k]["Time"])
+            allclass.push(dv[k]["Class"])
+          }
         }
         n.push(alltime)
         p.push(allclass)

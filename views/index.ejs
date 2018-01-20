@@ -80,24 +80,24 @@
             <% } %>
           </ul>
          
-          <ul style="width:33%;">
+          <ul style="width:33%;-webkit-padding-start: 20px;">
             <% for(var i=0; i < roomse.length; i++){ %>
-              <button class="accordion" style="width:77%"><%=lt[i][0]%></button> 
+              <button class="accordion" style="width:88%"><%=lt[i][0]%></button> 
               <div class="panel">
                <% for(var j=0; j < lt[i].length;j++){ %>
                
-                  <li style="padding:5px 0px; line-height: 20px"><%= lt[i][j] %></li>
+                  <li style="padding:5px 0px; font-size:15px"><%= lt[i][j] %></li>
                <% } %>  
               </div>
               <% } %>
             
           </ul>
-          <ul style="width:23%;">
+          <ul style="width:23%; -webkit-padding-start: 34px;">
             <% for(var i=0; i < roomse.length; i++){ %>
-              <button class="accordion" style="width:110%"><%=c[i][0]%></button> 
+              <button class="accordion" style="width:130%"><%=c[i][0]%></button> 
               <div class="panel" style="width:100%">
                 <% for(var j=0; j < c[i].length; j++){%>
-                  <li style="padding:5px 0px; line-height: 20px"><%= c[i][j] %></li>
+                  <li style="padding:5px 0px; font-size:15px"><%= c[i][j] %></li>
                 <% } %>
               </div>
               

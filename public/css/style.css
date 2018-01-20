@@ -50,7 +50,7 @@ fieldset {
 }
 .ghost-input, p {
   display: block;
-  border-bottom:1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   font-weight:300;
   width: 100%;
   font-size: 25px;
@@ -105,7 +105,7 @@ ul
   list-style: none;
   padding-top: 20px;
   float:left;
-  -webkit-padding-start: 35px;
+  -webkit-padding-start: 34px;
 }
 .infotab{
   padding-top: 20px;
@@ -119,7 +119,7 @@ ul
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 18px 18px 18px 15px;
     text-align: center;
     border: none;
     outline: none;
@@ -140,4 +140,15 @@ ul
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     color: #E64A19;
+}
+.accordion:after {
+    content: "\23F7"; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\23F6"; /* Unicode character for "minus" sign (-) */
 }
