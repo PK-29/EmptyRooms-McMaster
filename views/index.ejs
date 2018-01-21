@@ -109,7 +109,10 @@
             <% } %>
         
           </ul>
-        <% } %>
+        <% } else { %>
+          <p>All Rooms Occupied</p>
+          <% } %>
+        
         <% if(error !== null){ %>
           <p><%= error %></p>
         <% } %>
