@@ -70,11 +70,20 @@ fieldset {
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   
+  
 }
 .ghost-input:focus {
   border-bottom:1px solid #ddd;
   position: relative;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+
   
+}
+.ghost-input{
+    border-bottom: 1px solid #ddd;
+    
 }
 .ghost-button {
   margin-top: 10px;
@@ -92,6 +101,7 @@ fieldset {
 }
 .ghost-button:hover {
   border:2px solid #515151;
+  
 }
 p {
   color: #E64A19;
