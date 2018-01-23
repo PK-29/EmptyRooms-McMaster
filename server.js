@@ -9,6 +9,7 @@ const app = express()
 var port = process.env.PORT || 8080;
 
 app.use(express.static('public'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
@@ -76,7 +77,7 @@ app.post('/', function (req, res) {
                           var classcode = value[courses[i]]["code"]+"-"+ctypei[j]
                         }else{
                           var nextclass = "Empty"
-                          var classcode = "NONE"
+                          var classcode = "NONE"+"-"+ctypei[j]
                         }
                         
                         var anychange = differ.size
