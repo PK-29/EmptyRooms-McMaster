@@ -152,7 +152,7 @@ ul
     color: #E64A19;
 }
 .accordion:after {
-    content: "\23F7"; /* Unicode character for "plus" sign (+) */
+    content: "\9650"; 
     font-size: 13px;
     color: #777;
     float: right;
@@ -160,7 +160,7 @@ ul
 }
 
 .active:after {
-    content: "\23F6"; /* Unicode character for "minus" sign (-) */
+    content: "\9660"; /* Unicode character for "minus" sign (-) */
 }
 .Title {
     -webkit-box-shadow: 0 10px 6px -6px #777;

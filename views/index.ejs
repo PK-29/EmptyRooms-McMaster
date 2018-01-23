@@ -14,12 +14,12 @@
         <form action="/" method="post">
     <div class="IN">
           <div style="width: 50%;margin-left: 10px;">
-            <input name="time" type="text" class="ghost-input" placeholder="Enter a Time (ex: 11:00PM)" required="" style="
-    width: 100%;
-">
+            <input name="time" type="text" id="time" class="ghst-input" placeholder="Enter a Time (ex: 11:00PM)" style="width: 100%;">
+            
           </div>
+          
           <div style="width: 35%;">
-          <input name="rcode" type="text" placeholder="Building Code" class="ghost-input" list="build"/>
+          <input name="rcode" type="search" placeholder="Building Code" class="ghost-input" list="build"/>
           <datalist id="build">
             <option>ABB</option>
             <option>BSB</option>
@@ -137,4 +137,12 @@ for (i = 0; i < acc.length; i++) {
     } 
   });
 }
+</script>
+<script>
+
+ document.getElementById("time").onclick(function(){
+                 
+            $(this).prop('type', 'time');
+
+      });
 </script>
