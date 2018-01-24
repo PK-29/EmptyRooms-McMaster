@@ -77,7 +77,7 @@ app.post('/', function (req, res) {
                           var classcode = value[courses[i]]["code"]+"-"+ctypei[j]
                         }else{
                           var nextclass = "Empty"
-                          var classcode = "NONE"
+                          var classcode = "NONE"+"-"+ctypei[j]
                         }
                         
                         var anychange = differ.size
