@@ -74,7 +74,7 @@ app.post('/', function (req, res) {
                        // console.log(start+" "+end+" " + dt+ " "+ checkroom)
                         if (dt <= start){
                           var nextclass = moment(start, ["HH:mm"]).format("h:mmA") + "  -  " + moment(end, ["HH:mm"]).format("h:mmA");
-                          var classcode = value[courses[i]]["code"]+"-"+ctypei[j]
+                          var classcode = value[courses[i]]["code"]
                         }else{
                           var nextclass = "Empty"
                           var classcode = "NONE"
@@ -89,13 +89,13 @@ app.post('/', function (req, res) {
                             
                             array.push({
                               Time : nextclass,
-                              Class : classcode
+                              Class : classcode+"-"+ctypei[j]
                             })
                             dictionary[checkroom]=array
                           }else{
                             dictionary[checkroom]=[{
                               Time : nextclass,
-                              Class : classcode
+                              Class : classcode+"-"+ctypei[j]
                             }]
                           }
                          
