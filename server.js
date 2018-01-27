@@ -153,7 +153,7 @@ app.post('/', function (req, res) {
         let lect = Array.from(p);
        
        
-        res.render('index', {roomse: roomlist, lt: lectime, c: lect, t: time, d: days[day-1], m: req.body.term, error: null});
+        res.render('index', {roomse: roomlist, lt: lectime, c: lect, t: moment(time, ["HH:mm"]).format("h:mmA"), d: days[day-1], m: req.body.term, error: null});
       }
     }
   
