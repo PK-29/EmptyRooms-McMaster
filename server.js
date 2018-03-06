@@ -14,7 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index', {roomse: [],t : [], d : [], m : [], error: null});
+  
+  res.render('index', {roomse: [],t : [], d : [], m : [], show : false, error: null});
+  
 })
 
 app.post('/', function (req, res) {
@@ -151,9 +153,9 @@ app.post('/', function (req, res) {
         let roomlist = Array.from(r);
         let lectime = Array.from(n);
         let lect = Array.from(p);
+        
        
-       
-        res.render('index', {roomse: roomlist, lt: lectime, c: lect, t: moment(time, ["HH:mm"]).format("h:mmA"), d: days[day-1], m: req.body.term, error: null});
+        res.render('index', {show : true, roomse: roomlist, lt: lectime, c: lect, t: moment(time, ["HH:mm"]).format("h:mmA"), d: days[day-1], m: req.body.term, error: null});
       }
     }
   

@@ -14,7 +14,7 @@
         <form action="/" method="post">
     <div class="IN">
           <div style="width: 50%;margin-left: 10px;">
-            <input name="time"  id="time" type="text" class="ghost-input" placeholder="Enter a Time (ex: 11:00PM)" style="width: 100%;">
+            <input name="time"  id="time" type="time" class="ghost-input" placeholder="Enter a Time (ex: 11:00PM)" style="width: 100%;">
             
           </div>
           
@@ -69,20 +69,28 @@
           
           </div>
           <input type="submit" class="ghost-button" value="List EmptyRooms">
+          
+          <button id="ins" class="accordion" style="width:100%">Instructions</button>
+          <div class="panel" style="width:100%">
+                
+              </div>
         </form>
         
+
+            <% if(roomse !== null){%>
+              <% if(show){%>
         <div class="infotab" Style="width:28%; padding-left:30px"><p Style="font-size: 20px; ">Time: <%=t%></p> </div>
         <div class="infotab" Style="width:28%"><p Style="font-size: 20px;">Day: <%=d%></p> </div>
         <div class="infotab" Style="width:23%; padding-left:50px"><p Style="font-size: 20px; ">Term: <%=m%></p> </div>
         <div class="infotab" Style="width:23%"><p>Room</p> </div>
         <div class="infotab" Style="width:33%"><p>Occupation</p> </div>
         <div class="infotab" Style="width:23%"><p>Lecture</p> </div>
-          <ul style="width:23%;">
-            <% if(roomse !== null){%>
+              <% } %>
+            <ul style="width:23%;">
             <% for(var i=0; i < roomse.length; i++){ %>
               <li style="padding:18px 18px 18px 0px; line-height: 20px"> <%= roomse[i] %></li>
               
-              
+    
             <% } %>
           </ul>
          
@@ -93,6 +101,7 @@
                <% for(var j=0; j < lt[i].length;j++){ %>
                
                   <li style="padding:5px 0px; font-size:15px"><%= lt[i][j] %></li>
+               
                <% } %>  
               </div>
               <% } %>
@@ -141,9 +150,9 @@ for (i = 0; i < acc.length; i++) {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script>
 
-$("#time").click(function(){
+// $("#time").click(function(){
                  
-            $(this).prop('type', 'time');
+//             $(this).prop('type', 'time');
 
-      });
+//       });
 </script>

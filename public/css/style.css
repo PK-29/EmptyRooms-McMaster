@@ -102,6 +102,7 @@ fieldset {
 .ghost-button:hover {
   border:2px solid #aa002b;
   
+  
 }
 p {
   color: #E64A19;
@@ -124,7 +125,9 @@ ul
   padding-left: 39px;
   
 }
-
+#ins {
+ margin-top:10px;
+}
 .accordion {
     background-color: #eee;
     color: #444;
