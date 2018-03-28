@@ -24,7 +24,7 @@ app.post('/', function (req, res) {
   var time = req.body.time;
   var ccode = (req.body.rcode).toUpperCase();
   var day = days.indexOf(req.body.day)+1;
-  
+ 
   var term = req.body.term;
   if(term == 2){
     term = 5;
