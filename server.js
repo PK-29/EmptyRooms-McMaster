@@ -40,7 +40,9 @@ app.post('/', function (req, res) {
     } else {
       let rooms = JSON.parse(body)
       var dt = moment(time, ["h:mmA"]).format("HH:mm");
-      var value = rooms.timetables["2017"]["6"].courses
+      var ttkeys = Object.keys((rooms.timetables))
+      console.log(ttkeys)
+      var value = rooms.timetables[ttkeys[0]]["6"].courses
       var courses = Object.keys(value)
       //console.log(value)
       var i, j , k;
